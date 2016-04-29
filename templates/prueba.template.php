@@ -34,3 +34,9 @@
 
 </body>
 </html>
+
+<!-- Todos los Templates -->
+<!-- http://www.w3schools.com/bootstrap/bootstrap_templates.asp -->
+
+<!-- Templates Bootstrap-->
+<!-- http://www.w3schools.com/bootstrap/tryit.asp?filename=trybs_temp_portfolio&stacked=h -->

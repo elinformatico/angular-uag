@@ -1,4 +1,6 @@
 <?php
     # Boostraping Init
     include_once 'config.php';
-    include_once 'init.php';
+    include_once "templates/{$global['template']}.template.php";
+
+    exit; # Secure Exits;
