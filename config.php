@@ -1,7 +1,7 @@
 <?php
 	
 	define('APP_BASE', 'http://localhost/mobie.site');
-	define('VENDOR_JS', APP_BASE . '/js/vendor');
+	define('JS_PATH', APP_BASE . '/js');
+	define('CSS_PATH', APP_BASE . '/css');
 
 	$global['app_base'] = APP_BASE;
-	$global['vendor_js'] = VENDOR_JS;
