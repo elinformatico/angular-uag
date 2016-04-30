@@ -15,6 +15,8 @@
 
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
   
+  
+  <script src="<?php echo $global['app_base']; ?>/js/vendor/animate/angular-animate.min.js"></script>
   <!-- Bootstrap angular-->
   <script src="<?php echo $global['app_base']; ?>/js/vendor/angularbootstrap-ui/ui-bootstrap-tpls-0.14.3.min.js"></script>
 
@@ -31,6 +33,7 @@
   <!-- ================================================================================= -->
   <script src="<?php echo $global['app_base']; ?>/js/webservices/apiFactoryRest.js"></script>
   <script src="<?php echo $global['app_base']; ?>/js/controllers/homePageCtrl.js"></script>
+  <script src="<?php echo $global['app_base']; ?>/js/controllers/displayMovieModalCtrl.js"></script>
   <!-- ================================================================================= -->
 
   <style>
@@ -95,6 +98,7 @@
   <footer class="container-fluid text-center">
     <p>Desarrollo por José Noé Hernández Vivanco | Universidad Autonoma de Guadalajara</p>
   </footer>
-
+  
+  <?php include_once "views/displayMovie.html" ?>
 </body>
 </html>
