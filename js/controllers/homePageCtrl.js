@@ -13,8 +13,8 @@ function ( $rootScope,  $scope,  $http,  $compile,  $q,  $uibModal,  $log,  apiF
 		},
 		loadCountries : function(){
 			apiFactoryRest.getCountries()
-			.success(function(response){
-				$scope.countries = response.countries;
+			.success(function(rs){
+				$scope.countries = rs.countries;
 				growlService.notice('Mensaje Sistema', 'Yeahhhhh :)');
 			})
 			.error(function(error){
@@ -23,32 +23,51 @@ function ( $rootScope,  $scope,  $http,  $compile,  $q,  $uibModal,  $log,  apiF
 		},
 		loadMovies : function(){
 			apiFactoryRest.getMovies()
-			.success(function(response){
+			.success(function(rs){
 
-				if(response.status === 'success'){
-					$scope.movies = response.movies;
-				} else if(response.status === 'error'){
-					growlService.notice('Mensaje Sistema', response.msg);
+				if(rs.status === 'success'){
+					$scope.movies = rs.movies;
+				} else if(rs.status === 'error'){
+					growlService.notice('Mensaje Sistema', rs.msg);
 				}
 			})
-			.error(function(error){
-				growlService.error('Mensaje Sistema', response.msg);
+			.error(function(err){
+				growlService.error('Mensaje Sistema', err.msg);
 			});	
 		},
 		openMovieModal : function( datosPelicula ){
-			var modalInstance = $uibModal.open({
-                animation: true,
-                templateUrl : 'displayMovie.html',
-                controller  : 'displayMovieModalCtrl',
-                size        : 'lg',
-                backdrop    : 'static',
-                keyboard    : false,
-                resolve     : {
-                    Data: function() {
-                        return { datosPelicula : datosPelicula };
-                    }
-                }
-            });
+
+			
+			apiFactoryRest.getActorsMovie( datosPelicula.idMovie )
+			.success(function(rs){
+
+				if(rs.status == 'success'){
+
+					var modalInstance = $uibModal.open({
+		                animation: true,
+		                templateUrl : 'displayMovie.html',
+		                controller  : 'displayMovieModalCtrl',
+		                size        : 'lg',
+		                backdrop    : 'static',
+		                keyboard    : false,
+		                resolve     : {
+		                    Data: function() {
+		                        return { 
+		                        	datosPelicula : datosPelicula,
+		                        	actors : rs.actors
+		                        };
+		                    }
+		                }
+		            });
+				}
+			})
+			.error(function(err){
+				growlService.error('Mensaje Sistema', err.msg);
+			});
+
+		},
+		obtenerSubDatos : function(callback){
+
 		}
 	};
 	$scope.fn.init();

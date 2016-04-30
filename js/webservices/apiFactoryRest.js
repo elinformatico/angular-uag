@@ -34,6 +34,10 @@ angular.module('mobieApp')
     dataFactory.getMovies = function(){
       	return $http.get(restUrl + '/get/movies');
     }
+
+    dataFactory.getActorsMovie = function(movieId){
+        return $http.get( restUrl + '/movies/actors/' + movieId );
+    }
     
     return dataFactory;
 }]);
