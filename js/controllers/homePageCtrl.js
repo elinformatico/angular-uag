@@ -4,24 +4,12 @@ angular.module("mobieApp")
 function ( $rootScope,  $scope,  $http,  $compile,  $q,  $uibModal,  $log,  apiFactoryRest,  growlService ) {
 
 	$scope.countries = {};
+	$scope.movies = {};
+
 	$scope.fn = {
 		init : function(){
-			console.log('Init Function...');
-
-			var modalInstance = $uibModal.open({
-                animation: true,
-                templateUrl : 'displayMovie.html',
-                controller : 'displayMovieModalCtrl',
-                size: 'lg',
-                backdrop:'static',
-                keyboard:false,
-                resolve: {
-                    Data: function() {
-                        return { saludo : 'Ola ke ase :)' };
-                    }
-                }
-            });
-
+			this.loadMovies();			
+			
 		},
 		loadCountries : function(){
 			apiFactoryRest.getCountries()
@@ -36,13 +24,31 @@ function ( $rootScope,  $scope,  $http,  $compile,  $q,  $uibModal,  $log,  apiF
 		loadMovies : function(){
 			apiFactoryRest.getMovies()
 			.success(function(response){
-				$scope.countries = response.countries;
 
-				growlService.notice('Mensaje Sistema', 'Yeahhhhh :)');
+				if(response.status === 'success'){
+					$scope.movies = response.movies;
+				} else if(response.status === 'error'){
+					growlService.notice('Mensaje Sistema', response.msg);
+				}
 			})
 			.error(function(error){
-
+				growlService.error('Mensaje Sistema', response.msg);
 			});	
+		},
+		openMovieModal : function( datosPelicula ){
+			var modalInstance = $uibModal.open({
+                animation: true,
+                templateUrl : 'displayMovie.html',
+                controller  : 'displayMovieModalCtrl',
+                size        : 'lg',
+                backdrop    : 'static',
+                keyboard    : false,
+                resolve     : {
+                    Data: function() {
+                        return { datosPelicula : datosPelicula };
+                    }
+                }
+            });
 		}
 	};
 	$scope.fn.init();

@@ -8,19 +8,15 @@ angular.module('mobieApp')
         return $.param(data);
     }
 
-    dataFactory.getCountries = function(){
-      	return $http.get(restUrl + '/get/countries');
-    }
-
+    // ----------------------- Ejemplos -------------------------
     dataFactory.storeExample = function(data){
       return $http.post(restUrl + '/store/example', data, {
           headers : { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'},
           transformRequest : transform
       });
     }
-
     dataFactory.deleteExample = function(data){
-      	return $http.delete(restUrl + '/delete/example/'+ data);
+        return $http.delete(restUrl + '/delete/example/'+ data);
     }
 
     dataFactory.updateExample = function(data){
@@ -28,6 +24,15 @@ angular.module('mobieApp')
             headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'},
             transformRequest: transform
         });  
+    }
+
+    // --------------- Rest Utilizables -------------------
+    dataFactory.getCountries = function(){
+        return $http.get(restUrl + '/get/countries');
+    } 
+
+    dataFactory.getMovies = function(){
+      	return $http.get(restUrl + '/get/movies');
     }
     
     return dataFactory;

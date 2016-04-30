@@ -88,9 +88,9 @@
   <div class="container-fluid bg-3 text-center">    
     <h3>Algunas de las Mejores Peliculas recomendadas para ti</h3><br>
     <div class="row">
-      <div class="col-sm-3">
-        <p>Nombre Pelicula: </p>
-        <img src="http://ia.media-imdb.com/images/M/MV5BODU4MjU4NjIwNl5BMl5BanBnXkFtZTgwMDU2MjEyMDE@._V1_SX300.jpg" class="img-responsive" style="width:100%" alt="Image">
+      <div class="col-sm-3" style="padding: 30px; cursor: pointer;" ng-repeat="movie in movies">
+        <p> <strong> {{movie.title}} </strong> </p>
+        <img src="{{movie.image}}" ng-click="fn.openMovieModal(movie)" class="img-responsive" style="width:100%" alt="Image">
       </div>
     </div>
   </div><br>

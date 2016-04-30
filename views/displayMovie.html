@@ -2,12 +2,14 @@
 
 	    <div class="modal-header" >
 	        <h3 class="modal-title" style="color: black;"> <i class="iconNav fa fa-cloud-upload" ></i> 
-	        	Display Movie {{saludo}}
+	        	{{datosPelicula.title}}
 	        </h3>
 	    </div>
 	    <div class="modal-body">
 
-	    	Esto es el Contenido de la Modal
+	    	Información de la Pelicula: <br><br>
+	    	{{datosPelicula.synopsis}}
+
 	    	<div class="modal-footer">
                 <button ng-click="modal.cerrar()" style=" padding:1em 2em; border-radius: 5px; border:1px solid #f3f3f3; box-shadow:0px 0px 2px gray; color:gray; background-color:white;">Cancelar
                 </button>
