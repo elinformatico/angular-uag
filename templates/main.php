@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="mobieApp">
 <head>
-  <title>Bootstrap Example</title>
+  <title>Mobie - UAG</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="shortcut icon" href="<?php echo $global['app_base']; ?>/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="<?php echo $global['app_base']; ?>/favicon.ico" type="image/x-icon">
 
   <!-- ================================================================================= -->
   <script src="<?php echo $global['app_base']; ?>/js/vendor/angular/angular.min.js"></script>
