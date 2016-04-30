@@ -1,7 +1,7 @@
 angular.module("mobieApp")
 .controller("homePageCtrl", 
-	     ["$rootScope","$scope","$http","$compile","$q","$log","apiFactoryRest", "growlService",  
-function ( $rootScope,  $scope,  $http,  $compile,  $q,  $log,  apiFactoryRest, growlService ) {
+	     ["$rootScope","$scope","$http","$compile","$q","$uibModal","$log","apiFactoryRest","growlService",  
+function ( $rootScope,  $scope,  $http,  $compile,  $q,  $uibModal,  $log,  apiFactoryRest,  growlService ) {
 
 	$scope.countries = {};
 	$scope.fn = {

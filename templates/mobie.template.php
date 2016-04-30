@@ -5,22 +5,33 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <!-- ================================================================================= -->
+  <script src="<?php echo $global['app_base']; ?>/js/vendor/angular/angular.min.js"></script>
+  <!-- ================================================================================= -->
+
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
-  <script src="<?php echo $global['app_base']; ?>/js/vendor/angular/angular.min.js"></script>
-  <script src="<?php echo $global['app_base']; ?>/js/app.js"></script>
-  <script src="<?php echo $global['app_base']; ?>/js/webservices/apiFactoryRest.js"></script>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  
+  <!-- Bootstrap angular-->
+  <script src="<?php echo $global['app_base']; ?>/js/vendor/angularbootstrap-ui/ui-bootstrap-tpls-0.14.3.min.js"></script>
 
+  <!-- ================================================================================= -->
+  <script src="<?php echo $global['app_base']; ?>/js/app.js"></script>
+  <!-- ================================================================================= -->
+  
+  <!-- Grow Service Plugins -->
   <link rel="stylesheet" href="<?php echo $global['app_base'] ?>/css/jquery.growl.css">
   <script src="<?php echo $global['app_base']; ?>/js/vendor/GrowlNotification/jquery.growl.js"></script>
   <script src="<?php echo $global['app_base']; ?>/js/growlService.js"></script>
 
   <!-- Modules & Angular Controllers -->
+  <!-- ================================================================================= -->
+  <script src="<?php echo $global['app_base']; ?>/js/webservices/apiFactoryRest.js"></script>
   <script src="<?php echo $global['app_base']; ?>/js/controllers/homePageCtrl.js"></script>
-
-
+  <!-- ================================================================================= -->
 
   <style>
     /* Remove the navbar's default margin-bottom and rounded borders */ 
