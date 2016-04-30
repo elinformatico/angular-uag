@@ -3,7 +3,7 @@ angular.module("mobieApp")
     ['$scope','$uibModalInstance','Data','$compile','$rootScope', function(
       $scope , $uibModalInstance , Data , $compile , $rootScope ) {
         
-        console.log('Se abrio modal', Data);
+        console.log('Se abrio modal con los siguientes datos: ', Data);
         $scope.saludo = Data.saludo;
 
         $scope.modal = {

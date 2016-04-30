@@ -1,7 +1,7 @@
 <?php
 	
 	# define('TEMPLATE', 'prueba');
-	define('TEMPLATE', 'mobie');
+	define('TEMPLATE', 'main');
 
 	define('APP_BASE', 'http://localhost/mobie.site');
 	define('JS_PATH', APP_BASE . '/js');
