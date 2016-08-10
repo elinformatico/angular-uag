@@ -93,15 +93,13 @@
     </h3>
 
     <br><br><br>
+
     <div class="row">
       <div style="cursor: pointer;" ng-repeat="result in dbPediaResults">
-
         <p><a href="{{result.Concept.value}}" target="_new"> {{result.Concept.value}} </a></p>
-
-       <!--  <p> <strong> {{result.title}} </strong> </p>
-        <img src="{{result.Concept.value}}" ng-click="fn.openMovieModal(result)" class="img-responsive" style="width:100%" alt="Image"> -->
       </div>
     </div>
+    
   </div><br>
 
   <footer class="container-fluid text-center">
