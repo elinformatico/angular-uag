@@ -4,39 +4,14 @@ angular.module('mobieApp')
 	var restUrl = $rootScope.api;
 	var dataFactory = {};
 
+    var urlDbPedia = 'http://dbpedia.org/sparql?default-graph-uri=http%3A%2F%2Fdbpedia.org&query=select+distinct+%3FConcept+where+%7B%5B%5D+a+%3FConcept%7D+LIMIT+100&format=application%2Fsparql-results%2Bjson&CXML_redir_for_subjs=121&CXML_redir_for_hrefs=&timeout=30000&debug=on';
+
     var transform = function(data){
         return $.param(data);
     }
 
-    // ----------------------- Ejemplos -------------------------
-    dataFactory.storeExample = function(data){
-      return $http.post(restUrl + '/store/example', data, {
-          headers : { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'},
-          transformRequest : transform
-      });
-    }
-    dataFactory.deleteExample = function(data){
-        return $http.delete(restUrl + '/delete/example/'+ data);
-    }
-
-    dataFactory.updateExample = function(data){
-       return $http.put(restUrl + '/update/example', data, {
-            headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'},
-            transformRequest: transform
-        });  
-    }
-
-    // --------------- Rest Utilizables -------------------
-    dataFactory.getCountries = function(){
-        return $http.get(restUrl + '/get/countries');
-    } 
-
-    dataFactory.getMovies = function(){
-      	return $http.get(restUrl + '/get/movies');
-    }
-
-    dataFactory.getActorsMovie = function(movieId){
-        return $http.get( restUrl + '/movies/actors/' + movieId );
+    dataFactory.getSparqlResults = function(){
+      	return $http.get(urlDbPedia);
     }
     
     return dataFactory;

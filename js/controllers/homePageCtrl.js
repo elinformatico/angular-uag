@@ -3,72 +3,24 @@ angular.module("mobieApp")
 	     ["$rootScope","$scope","$http","$compile","$q","$uibModal","$log","apiFactoryRest","growlService",  
 function ( $rootScope,  $scope,  $http,  $compile,  $q,  $uibModal,  $log,  apiFactoryRest,  growlService ) {
 
-	$scope.countries = {};
-	$scope.movies = {};
+	$scope.dbPediaResults = {};
 
 	$scope.fn = {
 		init : function(){
-			this.loadMovies();			
-			
+			this.loadSparqlData();
 		},
-		loadCountries : function(){
-			apiFactoryRest.getCountries()
+		
+		loadSparqlData : function(){
+			apiFactoryRest.getSparqlResults()
 			.success(function(rs){
-				$scope.countries = rs.countries;
-				growlService.notice('Mensaje Sistema', 'Yeahhhhh :)');
-			})
-			.error(function(error){
-
-			});
-		},
-		loadMovies : function(){
-			apiFactoryRest.getMovies()
-			.success(function(rs){
-
-				if(rs.status === 'success'){
-					$scope.movies = rs.movies;
-				} else if(rs.status === 'error'){
-					growlService.notice('Mensaje Sistema', rs.msg);
-				}
+				$scope.dbPediaResults = rs.results.bindings;
+				console.log($scope.dbPediaResults);
+				
 			})
 			.error(function(err){
 				growlService.error('Mensaje Sistema', err.msg);
 			});	
 		},
-		openMovieModal : function( datosPelicula ){
-
-			
-			apiFactoryRest.getActorsMovie( datosPelicula.idMovie )
-			.success(function(rs){
-
-				if(rs.status == 'success'){
-
-					var modalInstance = $uibModal.open({
-		                animation: true,
-		                templateUrl : 'displayMovie.html',
-		                controller  : 'displayMovieModalCtrl',
-		                size        : 'lg',
-		                backdrop    : 'static',
-		                keyboard    : false,
-		                resolve     : {
-		                    Data: function() {
-		                        return { 
-		                        	datosPelicula : datosPelicula,
-		                        	actors : rs.actors
-		                        };
-		                    }
-		                }
-		            });
-				}
-			})
-			.error(function(err){
-				growlService.error('Mensaje Sistema', err.msg);
-			});
-
-		},
-		obtenerSubDatos : function(callback){
-
-		}
 	};
 	$scope.fn.init();
 }]);
