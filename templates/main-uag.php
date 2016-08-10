@@ -87,7 +87,7 @@
 
     <h3>Resultados de Dbpedia utilizando Sparql como consulta + Angular JS para renderizar los resultados</h3>
     <h3> Si lo deseas, puedes ver proyecto completo en  
-      <a href="https://github.com/elinformatico/angular-uag"> 
+      <a href="https://github.com/elinformatico/angular-uag" target="_new"> 
         Github <i class="fa fa-github" aria-hidden="true" style="font-size:22pt"></i>
       </a>
     </h3>
