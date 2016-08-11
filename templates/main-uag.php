@@ -91,6 +91,11 @@
         Github <i class="fa fa-github" aria-hidden="true" style="font-size:22pt"></i>
       </a>
     </h3>
+    <h3> Para ver la documentación de clic en el icono  
+      <a href="https://github.com/elinformatico/angular-uag/blob/master/README.md" target="_new"> 
+        <i class="fa fa-connectdevelop" aria-hidden="true" style="font-size:22pt"></i>
+      </a>
+    </h3>
 
     <br><br><br>
 
@@ -99,7 +104,7 @@
         <p><a href="{{result.Concept.value}}" target="_new"> {{result.Concept.value}} </a></p>
       </div>
     </div>
-    
+
   </div><br>
 
   <footer class="container-fluid text-center">
