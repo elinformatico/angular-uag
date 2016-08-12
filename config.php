@@ -1,9 +1,16 @@
 <?php
 	
-	define('TEMPLATE', 'main-uag');
+	$template = '';
+	if(isset($_REQUEST['view']) && $_REQUEST['view'] == 'spamlord'){
+		$template = 'spamlord-template';
+	} else {
+		$template = 'main-uag';
+	}
+
+	define('TEMPLATE', $template);
 
 	$app_base = strstr($_SERVER['HTTP_HOST'], 'localhost') ? 
-	
+
 	'http://localhost/uag/mobie.site' :    # DEVELOPMENT
 	'http://noehdez.info/site';            # PRODUCTION
 

@@ -13,6 +13,10 @@ angular.module('mobieApp')
     dataFactory.getSparqlResults = function(){
       	return $http.get(urlDbPedia);
     }
+
+    dataFactory.getCorreosUrl = function( url ){
+        return $http.get('')
+    }
     
     return dataFactory;
 }]);
