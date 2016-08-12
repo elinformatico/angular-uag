@@ -88,6 +88,8 @@
 	<div class="container-fluid bg-3 text-center">  
 		
 		<form id="formBuscarCorreos">
+
+			<p>Intenta introducir la siguiente URL: <a href="https://english.stanford.edu/people/faculty" target="_new"> https://english.stanford.edu/people/faculty</a> o cualquier URL que se te antoje poner en donde deseas extraer solo correos:</p> <br>
 			<input type="text" id="url" name="url" style="height:35px; width:500px; " placeholder="Introduzca una URL o sitio Web que desea hacer Scraping..."> 
 			<input type="button" id="buscarUrlBtn" class="btn btn-primary" value="Buscar Correos"></input> <br><br><br>
 		
